@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tummy_trek/widgets/big_text.dart';
+import 'package:tummy_trek/widgets/small_text.dart';
 
 import '../utils/colors.dart';
 
@@ -25,8 +27,13 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   children: [
                     Column(
                       children: [
-                        Text("Country"),
-                        Text("City")
+                        BigText(text: "India", color: AppColors.pink),
+                        Row(
+                          children: [
+                            SmallText(text: "Indore", color: Colors.black54),
+                            Icon(Icons.arrow_drop_down_rounded)
+                          ],
+                        )
                       ],
                     ),
                     Center(
