@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tummy_trek/home/food_page_body.dart';
 import 'package:tummy_trek/widgets/big_text.dart';
 import 'package:tummy_trek/widgets/small_text.dart';
 
@@ -21,18 +22,21 @@ class _MainFoodPageState extends State<MainFoodPage> {
           Container(
               child: Container(
                 margin: EdgeInsets.only(top: 45, bottom: 15),
-                padding: EdgeInsets.only(left: 20, right: 20),
+                padding: EdgeInsets.only(left: 10, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       children: [
                         BigText(text: "India", color: AppColors.pink),
-                        Row(
-                          children: [
-                            SmallText(text: "Indore", color: Colors.black54),
-                            Icon(Icons.arrow_drop_down_rounded)
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.only(left: 12.0),
+                          child: Row(
+                            children: [
+                              SmallText(text: "Indore", color: Colors.black54),
+                              Icon(Icons.arrow_drop_down_rounded)
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -50,7 +54,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
                   ],
                 ),
               )
-          )
+          ),
+          FoodPageBody(),
         ],
       ),
     );
