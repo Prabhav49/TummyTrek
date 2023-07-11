@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tummy_trek/home/main_food_page.dart';
+import 'package:tummy_trek/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
 
 void main() {

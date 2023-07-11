@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tummy_trek/home/food_page_body.dart';
+import 'package:tummy_trek/pages/home/food_page_body.dart';
 import 'package:tummy_trek/utils/dimensions.dart';
 import 'package:tummy_trek/widgets/big_text.dart';
 import 'package:tummy_trek/widgets/small_text.dart';
 
-import '../utils/colors.dart';
+import '../../utils/colors.dart';
 
 class MainFoodPage extends StatefulWidget {
   const MainFoodPage({Key? key}) : super(key: key);

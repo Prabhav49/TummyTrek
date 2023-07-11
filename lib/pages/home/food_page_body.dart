@@ -133,11 +133,11 @@ class _FoodPageBodyState extends State<FoodPageBody>{
                                     IconAndTextWidget(icon: Icons.circle_sharp,
                                         text: "Normal",
                                         iconColor: Colors.yellow),
-                                    SizedBox(width: 8,),
+                                    SizedBox(width: 2),
                                     IconAndTextWidget(icon: Icons.location_on,
                                         text: "1.7 km",
                                         iconColor: Colors.greenAccent),
-                                    SizedBox(width: 9,),
+                                    SizedBox(width: 2),
                                     IconAndTextWidget(icon: Icons.access_time_rounded,
                                         text: "32 min",
                                         iconColor: Colors.orangeAccent)
