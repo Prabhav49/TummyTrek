@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tummy_trek/utils/dimensions.dart';
+import 'package:tummy_trek/widgets/app_columns.dart';
 import 'package:tummy_trek/widgets/app_icon.dart';
 
+import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
 import '../../widgets/icon_and_text_widget.dart';
 import '../../widgets/small_text.dart';
@@ -13,6 +15,7 @@ class PopularFoodDetail extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           Positioned(
@@ -37,8 +40,8 @@ class PopularFoodDetail extends StatelessWidget{
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppIcon(icon: Icon.arrow_back_ios),
-                  AppIcon(icon: Icon.shopping_cart_outlined)
+                  AppIcon(icon: Icons.arrow_back_ios),
+                  AppIcon(icon: Icons.shopping_cart_outlined)
                 ],
           )),
           Positioned(
@@ -59,42 +62,45 @@ class PopularFoodDetail extends StatelessWidget{
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText(text: "Italian Side"),
-                    SizedBox(height: Dimensions.height10,),
-                    Row(
-                      children: [
-                        Wrap(
-                            children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.pink, size:20,))
-                        ),
-                        SizedBox(width: 6,),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: 10,),
-                        SmallText(text: "1,287"),
-                        SizedBox(width: 10,),
-                        SmallText(text: "comments")
-                      ],
-                    ),
+                    AppColumns(text: "Italian Side",),
                     SizedBox(height: Dimensions.height20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: Colors.yellow),
-                        SizedBox(width: 8,),
-                        IconAndTextWidget(icon: Icons.location_on,
-                            text: "1.7 km",
-                            iconColor: Colors.greenAccent),
-                        SizedBox(width: 9,),
-                        IconAndTextWidget(icon: Icons.access_time_rounded,
-                            text: "32 min",
-                            iconColor: Colors.orangeAccent)
-                      ],
-                    )
+                    BigText(text: "Introduce")
                   ],
                 ),
           ))
         ],
+      ),
+      bottomNavigationBar: Container(
+        height: 120,
+        padding: EdgeInsets.only(top: Dimensions.height30, bottom: Dimensions.height30, left: Dimensions.width20, right: Dimensions.width20),
+        decoration: BoxDecoration(
+          color: AppColors.pink,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(Dimensions.radius20*2),
+            topRight: Radius.circular(Dimensions.radius20*2)
+          )
+        ),
+        child: Row(
+          children: [
+            Container(
+              padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
+
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: Colors.white
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.remove, color: AppColors.pink,),
+                  SizedBox(width: Dimensions.width10/2,),
+                  BigText(text: "0"),
+                  SizedBox(width: Dimensions.width10/2,),
+                  Icon(Icons.add, color: AppColors.pink,)
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

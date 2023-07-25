@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tummy_trek/utils/colors.dart';
 import 'package:tummy_trek/utils/dimensions.dart';
+import 'package:tummy_trek/widgets/app_columns.dart';
 import 'package:tummy_trek/widgets/big_text.dart';
 import 'package:tummy_trek/widgets/icon_and_text_widget.dart';
 import 'package:tummy_trek/widgets/small_text.dart';
@@ -224,43 +225,7 @@ class _FoodPageBodyState extends State<FoodPageBody>{
               ),
               child: Container(
                 padding: EdgeInsets.only(top: Dimensions.height15, left: 15, right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: "Italian Side"),
-                    SizedBox(height: Dimensions.height10,),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.pink, size:20,))
-                        ),
-                        SizedBox(width: 6,),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: 10,),
-                        SmallText(text: "1,287"),
-                        SizedBox(width: 10,),
-                        SmallText(text: "comments")
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height20,),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(icon: Icons.circle_sharp,
-                            text: "Normal",
-                            iconColor: Colors.yellow),
-                        SizedBox(width: 8,),
-                        IconAndTextWidget(icon: Icons.location_on,
-                            text: "1.7 km",
-                            iconColor: Colors.greenAccent),
-                        SizedBox(width: 9,),
-                        IconAndTextWidget(icon: Icons.access_time_rounded,
-                            text: "32 min",
-                            iconColor: Colors.orangeAccent)
-                      ],
-                    )
-                  ],
-                ),
+                child: AppColumns(text: "Italian Side"),
               ),
             ),
           )
