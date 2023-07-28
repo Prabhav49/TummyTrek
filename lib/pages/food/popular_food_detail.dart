@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tummy_trek/utils/dimensions.dart';
 import 'package:tummy_trek/widgets/app_columns.dart';
 import 'package:tummy_trek/widgets/app_icon.dart';
+import 'package:tummy_trek/widgets/expandable_text.dart';
 
 import '../../utils/colors.dart';
 import '../../widgets/big_text.dart';
@@ -18,6 +19,7 @@ class PopularFoodDetail extends StatelessWidget{
       backgroundColor: Colors.white,
       body: Stack(
         children: [
+          //background image
           Positioned(
               left: 0,
               right: 0,
@@ -33,6 +35,7 @@ class PopularFoodDetail extends StatelessWidget{
                   )
                 ),
           )),
+          //icon widgets
           Positioned(
             top: Dimensions.height45,
               left: Dimensions.width20,
@@ -44,6 +47,7 @@ class PopularFoodDetail extends StatelessWidget{
                   AppIcon(icon: Icons.shopping_cart_outlined)
                 ],
           )),
+          //introduction of food
           Positioned(
               left: 0,
               right: 0,
@@ -64,14 +68,18 @@ class PopularFoodDetail extends StatelessWidget{
                   children: [
                     AppColumns(text: "Italian Side",),
                     SizedBox(height: Dimensions.height20,),
-                    BigText(text: "Introduce")
+                    BigText(text: "Introduce"),
+                    SizedBox(height: Dimensions.height20,),
+                    Expanded(child: SingleChildScrollView(child: ExpandableText(text: "Yummy tasty delicious food.",)))
                   ],
                 ),
           ))
+          //expandable text widget
+
         ],
       ),
       bottomNavigationBar: Container(
-        height: 120,
+        height: Dimensions.bottomHeightbar,
         padding: EdgeInsets.only(top: Dimensions.height30, bottom: Dimensions.height30, left: Dimensions.width20, right: Dimensions.width20),
         decoration: BoxDecoration(
           color: AppColors.pink,
@@ -81,6 +89,7 @@ class PopularFoodDetail extends StatelessWidget{
           )
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
               padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, left: Dimensions.width20, right: Dimensions.width20),
@@ -97,6 +106,13 @@ class PopularFoodDetail extends StatelessWidget{
                   SizedBox(width: Dimensions.width10/2,),
                   Icon(Icons.add, color: AppColors.pink,)
                 ],
+              ),
+            ),
+            Container(
+              child: BigText(text: "\$10 | Add to cart", color: Colors.white,),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
+                color: AppColors.pink,
               ),
             )
           ],
