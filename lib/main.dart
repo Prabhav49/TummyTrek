@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tummy_trek/pages/home/main_food_page.dart';
 import 'package:get/get.dart';
+import 'package:tummy_trek/helper/dependencies.dart' as dep;
 
-void main() {
+Future<void> main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(const MyApp());
 }
 
